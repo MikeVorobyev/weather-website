@@ -17,7 +17,19 @@ export const Route = createFileRoute('/')({
 function RouteComponent() {
   const weather= Route.useLoaderData()
   
-  if (!weather) return <div>Загрузка...</div>
+  if (!weather) return  <div 
+                          style={
+                            {
+                              fontSize: '36px', 
+                              textAlign: 'center', 
+                              background: '#2C2F34', 
+                              borderRadius: '20px', 
+                              padding: '20px', 
+                              margin: '20px'
+                            }}
+                        >
+                          Введите название города
+                        </div>
   
   return (
     <WeatherDashboard weather={weather}/>
