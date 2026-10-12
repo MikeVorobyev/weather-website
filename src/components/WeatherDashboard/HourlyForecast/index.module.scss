@@ -1,0 +1,149 @@
+.hourlyForecast {
+    display: flex;
+    flex-direction: column;
+    height: 100%;  
+    border: 1px solid var(--border-color);
+    border-radius: var(--container-border-radius);
+    overflow: hidden;
+
+    .title {
+        width: 100%;
+        background: var(--bg-title);
+        padding: 2px 0;
+        flex-shrink: 0;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .content {
+        display: flex; 
+        flex: 1;
+        min-height: 0;
+        background: var(--bg-components);
+        padding: var(--padding-content);
+        
+        .container {
+            flex: 1;
+            min-height: 0;
+            overflow-y: auto;
+
+            .contentUl {
+
+                .contentLi {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3px;
+
+                    .containerTop {
+                        display: flex;
+                        justify-content: space-between;
+                        align-items: center;
+                        user-select: none;
+
+                        .time {
+                            font-size: 18px;
+                        }
+
+                        .weatherIconWrapper {
+                            position: relative;
+                            width: 25%;
+
+                            .weatherIcon {
+                                position: absolute;
+                                z-index: 5;
+                                top: 50%;
+                                left: 50%;
+                                transform: translateX(-50%) translateY(-50%);
+                                width: 50px;
+                            }
+                        }
+
+                        .temperatureWrapper {
+                            display: flex;
+                            justify-content: space-between;
+                            width: 60px;
+                            padding: 2px 5px;
+                            outline: 1px solid var(--border-color);
+                            border-radius: 10px;
+                            box-shadow: inset 0 2px 8px rgba(0, 0, 0, 0.4);
+                            background: rgba(39, 43, 59, 0.492);
+
+
+                            .thermometer {
+                                width: 12px;
+                            }
+
+                            .temperature {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+
+                    .descriptionContainer {
+
+                        .descriptionContainerHeader {
+                            user-select: none;
+                            cursor: pointer;
+                            background-color: rgba(137, 136, 136, 0.172);
+                            border-radius: 10px;
+                            transition: 0.3s;
+
+                            div {
+                                display: flex;
+
+                                p {
+                                    font-size: 14px;
+                                    margin: 0 auto;
+                                    transform: translateX(-16px);
+                                }
+                            }
+
+                            &:hover {
+                                filter: brightness(200%);
+                            }
+
+                            .descriptionIcon {
+                                width: 16px;
+                                transition: 0.3s;
+                                
+                                &.openDescription {
+                                    transform: rotate(180deg);
+                                }
+                            }
+                        }
+
+                        .descriptionWrapper {
+                            font-size: 14px;
+                            display: grid;
+                            grid-template-rows: 0fr;
+                            opacity: 0;
+                            transform: translateY(-20px);
+                            pointer-events: none;
+                            transition: 0.3s;
+
+                            .descriptionInner {
+                                overflow: hidden;
+                            }
+
+                            &.openDescription {
+                                opacity: 1;
+                                transform: translateY(0px);
+                                grid-template-rows: 1fr;
+                            }
+                        }
+                    }
+                }
+
+                .contentLi::after {
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    background: var(--border-color);
+                    margin: 5px 0;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,35 @@
+.forecastToggleLink {
+    width: 180px;
+    padding: 10px 5px;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    transition: 0.3s;
+    background: var(--bg-components);
+
+    @media (max-width: 830px) {
+        width: 300px;
+    }
+
+    @media (max-width: 480px) {
+        width: 100%;
+    }
+
+    &:hover {
+        filter: brightness(85%);
+        transition: 0.1s;
+    }
+
+    &:active {
+        transform: translateY(1px) scale(97%);
+        transition: 0.1s;
+    }
+
+    .labelText {
+        height: 100%;
+        width: 100%;
+        font-size: var(--nav-menu-font-size);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}

@@ -1,0 +1,483 @@
+.currentWeather {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    outline: 1px solid var(--border-color);
+    border-radius: var(--container-border-radius);
+    overflow: hidden;
+
+    .title {
+        width: 100%;
+        background: var(--bg-title);
+        padding: 2px 0;
+
+        p {
+            text-align: center;
+        }
+    }
+
+    .content {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        height: 100%;
+        padding: var(--padding-content);
+        background: var(--bg-components);
+
+        @media (max-width: 830px) {
+            padding: var(--padding-content);
+        }
+
+        @media (max-width: 672px) {
+            padding: var(--padding-content);
+        }
+
+        .containerLeft {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 90px;
+
+            @media (max-width: 550px) {
+                gap: 170px;
+            }
+
+            .containerLeftTop {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+
+                .temperature {
+                    position: relative;
+                    display: flex;
+
+                    .temp {
+                        display: flex;
+
+                        .sign {
+                            font-size: 56px;
+                            line-height: 1.3;
+
+                            @media (max-width: 830px) {
+                                font-size: 36px;
+                            }
+
+                            @media (max-width: 672px) {
+                                font-size: 28px;
+                            }
+                        }
+
+                        .value {
+                            font-size: 86px;
+                            line-height: 0.78;
+                            font-family: 'Oswald', sans-serif;
+                            font-variant-numeric: tabular-nums;
+
+                            @media (max-width: 830px) {
+                                font-size: 56px;
+                            }
+
+                            @media (max-width: 672px) {
+                                font-size: 46px;
+                            }
+                        }
+                    }
+
+                    .celsiusIconWrapper {
+                        font-size: 24px;
+                        line-height: 0.9;
+                        margin-right: 5px;
+                        font-weight: 500;
+
+                        @media (max-width: 830px) {
+                            font-size: 16px;
+                        }
+
+                        @media (max-width: 672px) {
+                            font-size: 14px;
+                        }
+                    }
+
+                    .thermometerIconWrapper {
+
+                        .thermometerIcon {
+
+                            width: 38px;
+
+                            @media (max-width: 830px) {
+                                width: 25px;
+                            }
+
+                            @media (max-width: 672px) {
+                                width: 20px;
+                            }
+                        }
+                    }
+                }
+
+                .apparentTemperatureWrapper {
+
+
+                    .apparentTemperature {
+                        display: block;
+                        font-size: 16px;
+
+                        @media (max-width: 830px) {
+                            font-size: 14px;
+                        }
+
+                        @media (max-width: 672px) {
+                            display: none;
+                        }
+                    }
+
+                    .apparentTemperatureMobile {
+                        display: none;
+
+                        @media (max-width: 672px) {
+                            display: flex;
+                            flex-direction: column;
+                            gap: 5px;
+                            font-size: 14px;
+                        }
+
+                        @media (max-width: 550px) {
+                            font-size: 14px;
+                        }
+                    }
+                }
+            }
+
+            .containerLeftBottom {
+                display: flex;
+                flex-direction: column;
+                gap: 20px;
+
+                @media (max-width: 672px) {
+                    gap: 10px;
+                }
+
+                @media (max-width: 550px) {
+                    flex-direction: row;
+                }
+
+                .relativeHumidityContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    font-size: 16px;
+
+                    @media (max-width: 830px) {
+                        font-size: 14px;
+                        gap: 5px;
+                    }
+
+                    div {
+                        display: flex;
+                        gap: 10px;
+
+                        @media (max-width: 830px) {
+                            gap: 5px;
+                        }
+
+                        .relativeHumidityTitle {
+                            display: block;
+
+                            @media (max-width: 672px) {
+                                display: none;
+                            }
+                        }
+
+                        .relativeHumidityTitleMobile {
+                            display: none;
+                            
+                            @media (max-width: 672px) {
+                                display: block;
+                            }
+                        }
+
+                        .dropletIcon {
+                            display: block;
+                            width: 12px;
+
+                            @media (max-width: 830px) {
+                                width: 10px;
+                            }
+
+                            @media (max-width: 672px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .relativeHumidityWrapper {
+                        display: flex;
+                        gap: 5px;
+
+                        .dropletIconMobile {
+                            display: none;
+
+                            @media (max-width: 672px) {
+                                display: block;
+                                width: 10px;
+                            }
+                        }
+
+                        .relativeHumidity {
+                            font-size: 32px;
+                            line-height: 1;
+
+                            @media (max-width: 830px) {
+                                font-size: 20px;
+                            }
+
+                            @media (max-width: 672px) {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+
+
+                .windSpeedContainer {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 10px;
+
+                    font-size: 16px;
+
+                    @media (max-width: 830px) {
+                        font-size: 14px;
+                        gap: 5px;
+                    }
+
+                    div {
+                        display: flex;
+                        gap: 10px;
+
+                        @media (max-width: 830px) {
+                            gap: 5px;
+                                
+                        }
+
+                        .windSpeedTitle {
+                            display: block;
+
+                            @media (max-width: 672px) {
+                                display: none;
+                            }
+                        }
+
+                        .windSpeedTitleMobile {
+                            display: none;
+
+                            @media (max-width: 672px) {
+                                display: block;
+                            }
+                        }
+
+                        .windSpeedIcon {
+                            display: block;
+                            width: 22px;
+
+                            @media (max-width: 830px) {
+                                width: 18px;
+                                
+                            }
+
+                            @media (max-width: 672px) {
+                                display: none;
+                            }
+                        }
+                    }
+
+                    .windSpeedWrapper {
+                        display: flex;
+                        gap: 10px;
+
+                        @media (max-width: 830px) {
+                            gap: 5px;
+                                
+                        }
+
+                        .windSpeedIconMobile {
+                            display: none;
+
+                            @media (max-width: 672px) {
+                                display: block;
+                                width: 22px;
+                            }
+                        }
+
+                        .windSpeed {
+                            font-size: 32px;
+                            line-height: 1;
+
+                            @media (max-width: 830px) {
+                                font-size: 20px;
+                            }
+
+                            @media (max-width: 672px) {
+                                font-size: 18px;
+                            }
+
+                            .windSpeedUnit {
+
+                                @media (max-width: 672px) {
+                                    font-size: 12px;
+                                }
+                            }
+                        }
+                    }
+
+                }
+            }
+        }
+
+        .containerCenter {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            flex: 1;
+
+            @media (max-width: 550px) {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%) translateY(-57%);
+                justify-content: center;
+            }
+            
+
+            .weatherIconUniversal {
+                position: absolute;
+                pointer-events: none;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                
+                min-width: 300px;
+                max-width: 300px;
+
+                @media (max-width: 672px) {
+                    top: 20px;
+
+                    min-width: 225px;
+                    max-width: 225px;
+                }
+
+                @media (max-width: 550px) {
+                    position: relative;
+                }
+
+            }
+
+            p {
+                font-size: 26px;
+                text-align: center;
+                line-height: 1.3;
+
+                @media (max-width: 1400px) {
+                    font-size: 20px;
+                }
+
+                @media (max-width: 1200px) {
+                    font-size: 26px;
+                }
+
+                @media (max-width: 1100px) {
+                    font-size: 22px;
+                }
+
+                @media (max-width: 830px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 672px) {
+                    font-size: 14px;
+                }
+            }
+        }
+
+        .containerRight {
+            display: flex;
+            flex-direction: column;
+            align-items: end;
+            justify-content: space-between;
+
+            .dateWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+                gap: 5px;
+
+                font-size: 32px;
+
+                .weekday {
+                    line-height: 0.9;
+                }
+
+                @media (max-width: 830px) {
+                    font-size: 22px;
+                }
+
+                @media (max-width: 672px) {
+                    font-size: 18px;
+                }
+
+                @media (max-width: 550px) {
+                    font-size: 16px;
+                }
+
+                @media (max-width: 360px) {
+                    font-size: 14px;
+                }
+            }
+
+            .timeWrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: end;
+
+                .timezoneAbbreviation {
+                    font-size: 12px;
+
+                    @media (max-width: 672px) {
+                        font-size: 11px;
+                    }
+                }
+
+                .time {
+                    font-size: 62px;
+                    font-weight: 300;
+                    font-family: 'Oswald', sans-serif;
+                    font-variant-numeric: tabular-nums;
+                    line-height: 0.9;
+
+                    .blinkingColon {
+                        animation: blink 1s infinite;
+                    }
+
+                    @media (max-width: 830px) {
+                        font-size: 36px;
+                    }
+
+                    @media (max-width: 672px) {
+                        font-size: 30px;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+@keyframes blink {
+    0%, 49% { opacity: 1; }
+    50%, 100% { opacity: 0.1; }
+}

@@ -1,0 +1,15 @@
+.locationInfo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        font-size: var(--nav-menu-font-size);
+        width: 100%;
+
+        .locationIconWrapper {
+            min-width: 14px;
+            .locationIcon {
+                width: 14px;
+                fill: var(--text-color);
+            }
+        }
+    }

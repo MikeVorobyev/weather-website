@@ -1,0 +1,58 @@
+.weatherDashboard {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr; 
+    grid-template-areas:
+        'current_weather current_weather current_weather hourly_forecast'
+        'weather_map     weather_map     weather_map     weekly_forecast'
+    ;
+    gap: 20px;
+
+    width: 100%;
+    flex: 1; 
+    min-height: 0;
+    margin: 20px 0;
+
+    .currentWeatherComponent {
+        grid-area: current_weather;
+        filter: var(--drop-shadow);
+    }
+    .hourlyForecastComponent {
+        grid-area: hourly_forecast;
+        min-height: 0;
+        overflow: hidden; 
+        filter: var(--drop-shadow);
+    }
+    .weatherMapComponent {
+        grid-area: weather_map;
+        filter: var(--drop-shadow);
+
+        @media(max-width: 1200px) {
+            height: 200px;
+        }
+
+        @media(max-width: 480px) {
+            height: 160px;
+        }
+    }
+    .weeklyForecastComponent {
+        grid-area: weekly_forecast;
+        min-height: 0;
+        overflow: hidden; 
+        filter: var(--drop-shadow);
+
+        @media(max-width: 1200px) {
+            display: none;
+        }
+    }
+
+    @media(max-width: 1200px) {
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr auto;
+        grid-template-areas:
+            'weather_map'
+            'current_weather'
+            'hourly_forecast'
+        ;
+    }
+}

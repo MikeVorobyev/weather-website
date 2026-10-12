@@ -1,0 +1,64 @@
+@import './assets/fonts/fonts.css';
+
+:root {
+  --text-color: rgb(255, 255, 255);
+  --bg-components: #2C2F34;
+  --bg-title: rgba(26, 31, 53, 0.492);
+  --border-color: #3D3F44;
+  --drop-shadow: drop-shadow(5px 5px 8px rgba(17, 17, 17, 0.377));
+  --container-border-radius: 30px;
+  --padding-content: 20px;
+
+  background: #1D1D1F;
+  color: var(--text-color);
+  --nav-menu-font-size: 18px
+}
+
+@media (max-width: 1500px) {
+  :root {
+    --padding-content: 12px;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --padding-content: 20px;
+  }
+}
+
+@media (max-width: 1280px) {
+  :root {
+    --nav-menu-font-size: 16px
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-menu-font-size: 14px
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --nav-menu-font-size: 12px
+  }
+}
+
+@media (max-width: 830px) {
+  :root {
+    --container-border-radius: 20px;
+    --padding-content: 15px;
+  }
+}
+
+@media (max-width: 672px) {
+  :root {
+    --padding-content: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  :root {
+    background: #22252A;
+  }
+}

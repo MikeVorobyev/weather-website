@@ -1,0 +1,32 @@
+.weekForecastPage {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    height: 100%;
+
+    @media (max-width: 1200px) {
+        margin-bottom: 20px;
+    }
+
+    .forecastToggleLinkOnPageWrapper {
+        display: flex;
+        justify-content: end;
+
+        .forecastToggleLinkOnPage {
+
+            @media (max-width: 1200px) {
+                display: none;
+            }
+        }
+    }
+
+    .weeklyForecastComponent {
+        height: 85%;
+
+        @media (max-width: 1200px) {
+            height: 100%;
+        }
+    }
+}
