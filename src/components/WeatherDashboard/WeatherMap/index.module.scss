@@ -91,6 +91,19 @@
                     height: 20px;
                 }
             }
+
+            @media (max-width: 768px) {
+                min-width: 130px;
+                font-size: 12px;
+                padding: 5px 3px;
+                border-radius: 10px;
+            }
+
+            @media (max-width: 480px) {
+                min-width: 100px;
+                font-size: 10px;
+                border-radius: 10px;
+            }
         }
 
         .attribution {
@@ -115,6 +128,19 @@
 
             span {
                 color: #000000;
+            }
+
+            @media (max-width: 768px) {
+                font-size: 9px;
+                 padding: 1px 3px;
+            }
+
+            @media (max-width: 480px) {
+                font-size: 8px;
+                padding: 1px 2px;
+
+                right: 3%;
+                transform: translateX(0%);
             }
         }
     }

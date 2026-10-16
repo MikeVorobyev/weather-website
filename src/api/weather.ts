@@ -74,32 +74,9 @@ const weatherShema = z.object({
 
 export type Weather = z.infer<typeof weatherShema>
 
-// export async function fetchWeather(latitude: number, longitude: number): Promise<Weather | null> {
-//     try {
-//         const res = await axios.get('https://api.open-meteo.com/v1/forecast', {
-//             params: {
-//                 latitude,
-//                 longitude,
-//                 current: 'temperature_2m,apparent_temperature,weather_code,wind_speed_10m,relative_humidity_2m,is_day',
-//                 hourly: 'temperature_2m,weather_code,precipitation_probability,is_day',
-//                 daily: 'weather_code,temperature_2m_max,temperature_2m_min,precipitation_sum',
-//                 timezone: 'auto',
-//                 forecast_days: 8
-//             }
-//         })
-
-//         const parsed = weatherShema.safeParse(res.data)
-
-//         return parsed.success ? parsed.data : null
-//     } catch(err) {
-//         console.log('ERROR weather: ', err)
-//         return null
-//     }
-// }
-
 export async function fetchWeather(latitude: number, longitude: number): Promise<Weather | null> {
     try {
-        // 1. Собираем параметры
+        // Собираем параметры
         const params = new URLSearchParams({
             latitude: String(latitude),
             longitude: String(longitude),
@@ -110,16 +87,16 @@ export async function fetchWeather(latitude: number, longitude: number): Promise
             forecast_days: '8'
         }).toString();
 
-        // 2. Целевой URL Open-Meteo
+        // Целевой URL Open-Meteo
         const targetUrl = `https://api.open-meteo.com/v1/forecast?${params}`;
         
-        // 3. Твой Cloudflare Worker (прокси)
+        // Cloudflare Worker (прокси)
         const workerUrl = 'https://weather-proxy.megamancartman01.workers.dev';
         
-        // 4. Формируем запрос через прокси
+        // Формируем запрос через прокси
         const proxyUrl = `${workerUrl}?url=${encodeURIComponent(targetUrl)}`;
 
-        // 5. Делаем запрос
+        // Запрос
         const res = await axios.get(proxyUrl);
 
         const parsed = weatherShema.safeParse(res.data);
